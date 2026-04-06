@@ -1,0 +1,18 @@
+{
+  "buildCommand": "echo 'Static site'",
+  "outputDirectory": ".",
+  "env": {
+    "VERCEL_ENV": "production"
+  },
+  "functions": {
+    "send.php": {
+      "runtime": "php-8.2"
+    }
+  },
+  "routes": [
+    {
+      "src": "/(.*)",
+      "dest": "/$1"
+    }
+  ]
+}
