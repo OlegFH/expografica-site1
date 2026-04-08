@@ -5,8 +5,11 @@
     "VERCEL_ENV": "production"
   },
   "functions": {
+    "api/*.php": {
+      "runtime": "vercel-php@0.6.0"
+    },
     "send.php": {
-      "runtime": "php-8.2"
+      "runtime": "vercel-php@0.6.0"
     }
   },
   "routes": [
