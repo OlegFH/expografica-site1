@@ -95,6 +95,13 @@ contactForm.addEventListener('submit', async (e) => {
         const result = await response.json();
 
         if (result.success) {
+            // Google Event snippet for Покупка conversion page
+            if (typeof gtag === 'function') {
+                gtag('event', 'conversion', {
+                    'send_to': 'AW-18039840782/fabqCL2PzpYcEI7AiJpD',
+                    'transaction_id': ''
+                });
+            }
             formMessage.textContent = 'Спасибо! Ваша заявка отправлена. Мы свяжемся с вами в ближайшее время.';
             formMessage.classList.add('success');
             formMessage.classList.remove('error');
