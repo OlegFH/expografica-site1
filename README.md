@@ -124,7 +124,7 @@ expografica-site/
 
 - **Телефон:** +380 93 751 74 52
 - **Email:** expografica25@gmail.com
-- **Telegram:** @ArtUVPrint_bot
+- **Telegram:** @Expoprint_bot
 - **Адреса:** м. Київ, вул. Новомостицкая 25-В
 
 ## 🚀 Функціональність JavaScript
@@ -153,7 +153,7 @@ expografica-site/
 1. **У файлі `index.html`:**
    - Телефон: `+380937517452`
    - Email: `expografica25@gmail.com`
-   - Telegram: `@ArtUVPrint_bot`
+   - Telegram: `@Expoprint_bot`
    - Адреса: `м. Київ, вул. Новомостицкая 25-В`
 
 2. **У файлі `send.php`:**
