@@ -73,6 +73,34 @@ if (!preg_match('/^[\d\s\-\+\(\)]+$/', $phone)) {
     exit();
 }
 
+// Telegram configuration
+$botToken = '8715937184:AAGakHAcXE81g6kmZH-r7NeVHRmof_nvvU4';
+$chatId = '1033298262';
+
+// Build Telegram message
+$telegramMessage = "🚀 *Нова заявка з сайту Expografica*\n\n";
+$telegramMessage .= "👤 *Ім'я:* " . $name . "\n";
+$telegramMessage .= "📞 *Телефон:* " . $phone . "\n";
+$telegramMessage .= "📧 *Email:* " . $email . "\n";
+$telegramMessage .= "💬 *Коментар:* " . $comment . "\n\n";
+$telegramMessage .= "📅 *Дата:* " . date('Y-m-d H:i:s');
+
+// Send to Telegram
+$telegramUrl = "https://api.telegram.org/bot{$botToken}/sendMessage";
+$telegramData = [
+    'chat_id' => $chatId,
+    'text' => $telegramMessage,
+    'parse_mode' => 'Markdown'
+];
+
+$ch = curl_init();
+curl_setopt($ch, CURLOPT_URL, $telegramUrl);
+curl_setopt($ch, CURLOPT_POST, 1);
+curl_setopt($ch, CURLOPT_POSTFIELDS, http_build_query($telegramData));
+curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+$telegramResult = curl_exec($ch);
+curl_close($ch);
+
 // Email configuration
 $to = 'expografica25@gmail.com';
 $subject = 'Нова заявка з веб-сайту Expografica';
@@ -94,7 +122,7 @@ $headers .= "Content-Type: text/plain; charset=UTF-8\r\n";
 // Send email
 $mailSent = mail($to, $subject, $emailBody, $headers);
 
-if ($mailSent) {
+if ($mailSent || $telegramResult) {
     // Also send confirmation email to user
     $userSubject = 'Ваша заявка отримана - Expografica';
     $userBody = "Привіт " . htmlspecialchars($name) . "!\n\n";
@@ -108,7 +136,7 @@ if ($mailSent) {
     $userBody .= "Команда Expografica\n\n";
     $userBody .= "Контакти:\n";
     $userBody .= "Телефон: +380 93 751 74 52\n";
-    $userBody .= "Telegram: @ArtUVPrint_bot\n";
+    $userBody .= "Telegram: @Expoprint_bot\n";
     $userBody .= "Email: expografica25@gmail.com\n";
 
     $userHeaders = "From: expografica25@gmail.com\r\n";
@@ -122,7 +150,7 @@ if ($mailSent) {
     http_response_code(200);
 } else {
     $response['success'] = false;
-    $response['message'] = 'Failed to send email. Please try again later.';
+    $response['message'] = 'Failed to send application. Please try again later.';
     http_response_code(500);
 }
 
