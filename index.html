@@ -608,31 +608,38 @@
 
     <script src="js/script.js"></script>
     <script>
-function sendToTelegram() {
-    function openPopup() {
-  document.getElementById('popup').style.display = 'flex';
-}
+<div id="popup" style="
+  display:none;
+  position:fixed;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  background:rgba(0,0,0,0.6);
+  z-index:999999;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+">
 
-function closePopup() {
-  document.getElementById('popup').style.display = 'none';
-}
+  <div style="
+    background:white;
+    padding:20px;
+    border-radius:10px;
+    width:300px;
+  ">
 
-function sendForm() {
-  const name = document.getElementById('name').value;
-  const contact = document.getElementById('contact').value;
-  const message = document.getElementById('message').value;
+    <h3>Розрахунок вартості</h3>
 
-  alert("Заявка відправлена!");
-  closePopup();
-}
-  fetch("https://api.telegram.org/bot8715937184:AAGMcvzLR1tRDSmlGY8XxEOirsITvyd_1w0/sendMessage", {method: "POST",headers: {
-      "Content-Type": "application/json"
-    },body: JSON.stringify({
-      chat_id: "-1003881445193",   text: "🔥 Новая заявка с сайта expografica24"    })
-  });
+    <input id="name" placeholder="Ваше ім’я" style="width:100%; margin-bottom:10px;">
+    <input id="contact" placeholder="Телефон або Telegram" style="width:100%; margin-bottom:10px;">
+    <textarea id="message" placeholder="Ваше питання" style="width:100%; margin-bottom:10px;"></textarea>
 
-  alert("Заявка отправлена!");
-}
+    <button onclick="sendForm()">Відправити</button>
+    <button onclick="closePopup()">Закрити</button>
+
+  </div>
+</div>
 </script>
     <!-- POPUP -->
 <div id="popup" style="display:flex; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.6); justify-content:center; align-items:center;">
@@ -648,21 +655,36 @@ function sendForm() {
     <button onclick="closePopup()">Закрити</button>
 </div></div>
 <script>
-function openPopup() {
-  document.getElementById('popup').style.display = 'flex';
-}
-
-function closePopup() {
-  document.getElementById('popup').style.display = 'none';
-}
-
+<script>
 function sendForm() {
   const name = document.getElementById('name').value;
   const contact = document.getElementById('contact').value;
   const message = document.getElementById('message').value;
 
-  alert("Заявка відправлена!");
+  const text = `🔥 Нова заявка з сайту:
+Ім’я: ${name}
+Контакт: ${contact}
+Запит: ${message}`;
+
+  fetch(`https://api.telegram.org/bot8715937184:AAGMcvzLR1tRDSmlGY8XxEOirsITvyd_1w0/sendMessage`, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json"
+    },
+    body: JSON.stringify({
+      chat_id: "-1003881445193",
+      text: text
+    })
+  })
+  .then(() => {
+    alert("Заявка відправлена!");
+    closePopup(); // 👈 закрытие
+  })
+  .catch(() => {
+    alert("Помилка відправки");
+  });
 }
+</script>
 </script>
    <div id="popup" style="
   display:none;
