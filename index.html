@@ -609,6 +609,22 @@
     <script src="js/script.js"></script>
     <script>
 function sendToTelegram() {
+    function openPopup() {
+  document.getElementById('popup').style.display = 'flex';
+}
+
+function closePopup() {
+  document.getElementById('popup').style.display = 'none';
+}
+
+function sendForm() {
+  const name = document.getElementById('name').value;
+  const contact = document.getElementById('contact').value;
+  const message = document.getElementById('message').value;
+
+  alert("Заявка відправлена!");
+  closePopup();
+}
   fetch("https://api.telegram.org/bot8715937184:AAGMcvzLR1tRDSmlGY8XxEOirsITvyd_1w0/sendMessage", {method: "POST",headers: {
       "Content-Type": "application/json"
     },body: JSON.stringify({
