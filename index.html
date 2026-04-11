@@ -73,9 +73,7 @@
                 <h2 class="hero-title">УФ друк у Києві за 24 години</h2>
                 <p class="hero-subtitle">на акрилі, ПВХ, склі та шкірі</p>
                 <div class="hero-buttons">
-                    <a href="#" onclick="openPopup(); return false;" class="btn btn-primary">
-  Розрахувати вартість
-</a>
+                    <a href="#" onclick="openPopup(); return false;" class="btn btn-primary">Розрахувати вартість</a>
                     <a href="https://t.me/Expoprint_bot" target="_blank" class="btn btn-secondary">Написати в Telegram</a>
                 </div>
                 <div class="hero-phone">
@@ -650,15 +648,35 @@ function sendForm() {
     <button onclick="closePopup()">Закрити</button>
 </div></div>
 <script>
-function openPopup() {document.getElementById('popup').style.display = 'flex';
-}unction closePopup() {
+function openPopup() {
+  document.getElementById('popup').style.display = 'flex';
+}
+
+function closePopup() {
   document.getElementById('popup').style.display = 'none';
-}function sendForm() {
+}
+
+function sendForm() {
   const name = document.getElementById('name').value;
   const contact = document.getElementById('contact').value;
-  const message = document.getElementById('message').value;alert("Заявка відправлена!\n\nІм’я: " + name + "\nКонтакт: " + contact + "\nПитання: " + message) closePopup();
+  const message = document.getElementById('message').value;
+
+  alert("Заявка відправлена!");
 }
 </script>
+    <div id="popup" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.6); justify-content:center; align-items:center; z-index:9999;">
+  <div style="background:white; padding:20px; border-radius:10px; width:300px;">
     
+    <h3>Розрахунок вартості</h3>
+
+    <input id="name" placeholder="Ваше ім’я" style="width:100%; margin-bottom:10px;">
+    <input id="contact" placeholder="Телефон або Telegram" style="width:100%; margin-bottom:10px;">
+    <textarea id="message" placeholder="Ваше питання" style="width:100%; margin-bottom:10px;"></textarea>
+
+    <button onclick="sendForm()">Відправити</button>
+    <button onclick="closePopup()">Закрити</button>
+
+  </div>
+</div>
 </body>
 </html>
