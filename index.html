@@ -73,7 +73,7 @@
                 <h2 class="hero-title">УФ друк у Києві за 24 години</h2>
                 <p class="hero-subtitle">на акрилі, ПВХ, склі та шкірі</p>
                 <div class="hero-buttons">
-                    <a href="#calculator" class="btn btn-primary">Розрахувати вартість</a>
+                    <a href="#" onclick="sendToTelegram()" class="btn btn-primary">Розрахувати вартість</a>
                     <a href="https://t.me/Expoprint_bot" target="_blank" class="btn btn-secondary">Написати в Telegram</a>
                 </div>
                 <div class="hero-phone">
@@ -607,5 +607,16 @@
     </footer>
 
     <script src="js/script.js"></script>
+    <script>
+function sendToTelegram() {
+  fetch("https://api.telegram.org/bot8715937184:AAGMcvzLR1tRDSmlGY8XxEOirsITvyd_1w0/sendMessage", {method: "POST",headers: {
+      "Content-Type": "application/json"
+    },body: JSON.stringify({
+      chat_id: "-1003881445193",   text: "🔥 Новая заявка с сайта expografica24"    })
+  });
+
+  alert("Заявка отправлена!");
+}
+</script>
 </body>
 </html>
