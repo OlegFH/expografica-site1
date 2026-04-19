@@ -380,7 +380,7 @@
                         <h3>Брендування авто</h3>
                     </div>
                 </div>
-                <div class="gallery-item" data-category="banners">
+                <div class="gallery-item hidden" data-category="banners">
                     <img src="images/dEmTFELJPwqC.jpg" alt="Large Format Printing">
                     <div class="gallery-overlay">
                         <h3>Широкоформатний друк</h3>
@@ -392,13 +392,13 @@
                         <h3>Банер Partner Synergy</h3>
                     </div>
                 </div>
-                <div class="gallery-item" data-category="interior">
+                <div class="gallery-item hidden" data-category="interior">
                     <img src="images/bYfujqhQOv55.jpg" alt="Interior Design">
                     <div class="gallery-overlay">
                         <h3>Інтер'єрна реклама</h3>
                     </div>
                 </div>
-                <div class="gallery-item" data-category="uv">
+                <div class="gallery-item hidden" data-category="uv">
                     <img src="images/qP5D28SCMwoR.jpg" alt="UV Printing">
                     <div class="gallery-overlay">
                         <h3>УФ друк на матеріалі</h3>
@@ -606,5 +606,18 @@
     });
     </script>
     <script src="js/script.js"></script>
+    <script>
+document.addEventListener("DOMContentLoaded", function() {
+  const btn = document.querySelector(".show-more-btn");
+  const hiddenItems = document.querySelectorAll(".gallery-item.hidden");
+
+  btn.addEventListener("click", function() {
+    hiddenItems.forEach(item => {
+      item.classList.remove("hidden");
+    });
+    btn.style.display = "none";
+  });
+});
+</script>
 </body>
 </html>
