@@ -643,6 +643,17 @@ section {
     opacity: 0;
     transition: var(--transition);
 }
+.gallery-overlay {
+  background: linear-gradient(
+    to top,
+    rgba(0,0,0,0.7),
+    rgba(0,0,0,0.2)
+  );
+}
+.gallery-item:hover img {
+  transform: scale(1.1);
+  filter: blur(2px);
+}
 
 .gallery-overlay h3 {
   color: #ffffff; /* белый */
