@@ -645,9 +645,9 @@ section {
 }
 
 .gallery-overlay h3 {
-    color: var(--primary-color);
-    text-align: center;
-    font-size: 1.2rem;
+  color: #ffffff; /* белый */
+  font-weight: 600;
+  text-shadow: 0 2px 8px rgba(0,0,0,0.8); /* тень для читаемости */
 }
 
 .gallery-item:hover {
