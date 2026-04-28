@@ -2,80 +2,32 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
         <loc>https://expografica24.com.ua/</loc>
-        <lastmod>2024-03-21</lastmod>
-        <changefreq>weekly</changefreq>
+        <lastmod>2026-04-28</lastmod>
+        <changefreq>daily</changefreq>
         <priority>1.0</priority>
     </url>
     <url>
-        <loc>https://expografica24.com.ua/#services</loc>
-        <lastmod>2024-03-21</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.8</priority>
-    </url>
-    <url>
-        <loc>https://expografica24.com.ua/#advantages</loc>
-        <lastmod>2024-03-21</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.8</priority>
-    </url>
-    <url>
-        <loc>https://expografica24.com.ua/#gallery</loc>
-        <lastmod>2024-03-21</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.8</priority>
-    </url>
-    <url>
-        <loc>https://expografica24.com.ua/#order</loc>
-        <lastmod>2024-03-21</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.9</priority>
-    </url>
-    <url>
-        <loc>https://expografica24.com.ua/#contact</loc>
-        <lastmod>2024-03-21</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.7</priority>
-    </url>
-    <url>
         <loc>https://expografica24.com.ua/uv-druk-kyiv.html</loc>
-        <lastmod>2024-04-26</lastmod>
+        <lastmod>2026-04-28</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.9</priority>
+    </url>
+    <url>
+        <loc>https://expografica24.com.ua/uf-druk-akryl.html</loc>
+        <lastmod>2026-04-28</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
     </url>
     <url>
         <loc>https://expografica24.com.ua/lateksnyi-druk-kyiv.html</loc>
-        <lastmod>2024-04-26</lastmod>
+        <lastmod>2026-04-28</lastmod>
         <changefreq>weekly</changefreq>
-        <priority>0.9</priority>
-    </url>
-    <url>
-        <loc>https://expografica24.com.ua/druk-baneriv-kyiv.html</loc>
-        <lastmod>2024-04-26</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.9</priority>
+        <priority>0.8</priority>
     </url>
     <url>
         <loc>https://expografica24.com.ua/ploterna-porizka-kyiv.html</loc>
-        <lastmod>2024-04-26</lastmod>
+        <lastmod>2026-04-28</lastmod>
         <changefreq>weekly</changefreq>
-        <priority>0.9</priority>
-    </url>
-    <url>
-        <loc>https://expografica24.com.ua/nakleiky-kyiv.html</loc>
-        <lastmod>2024-04-26</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.9</priority>
-    </url>
-    <url>
-        <loc>https://expografica24.com.ua/uv-druk-tsina-kyiv.html</loc>
-        <lastmod>2024-04-26</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.9</priority>
-    </url>
-    <url>
-        <loc>https://expografica24.com.ua/terminovyi-uv-druk-kyiv.html</loc>
-        <lastmod>2024-04-26</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.9</priority>
+        <priority>0.8</priority>
     </url>
 </urlset>
